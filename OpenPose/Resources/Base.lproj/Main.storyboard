@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zds-ih-YIX">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pose Root-->
+        <scene sceneID="keR-Yb-u7j">
+            <objects>
+                <tableViewController id="GZt-Oy-3TA" customClass="PoseRootController" customModule="OpenPose" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hOx-6c-kdK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lpc-az-u4i">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lpc-az-u4i" id="w9j-B2-VLJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ltf-Nl-1dp" kind="show" identifier="heatMap" id="QGW-CQ-dmB"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Z9L-JT-zSR">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z9L-JT-zSR" id="Ve3-Fp-o7a">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Atz-OJ-yv4" kind="show" identifier="opencvImage" id="g6C-Wa-Tup"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3Ov-rq-KAc">
+                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ov-rq-KAc" id="0IR-hl-FY1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="c9Z-rY-Q3D" kind="show" identifier="opencvVideoStream" id="0Ak-Ug-JAM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GZt-Oy-3TA" id="Jjq-8b-elX"/>
+                            <outlet property="delegate" destination="GZt-Oy-3TA" id="EGq-MN-bOA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pose Root" id="CbV-Gz-146"/>
+                    <connections>
+                        <outlet property="tvExamples" destination="hOx-6c-kdK" id="zaX-kb-VzD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Um9-bw-ML5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="37"/>
+        </scene>
+        <!--Image 2 Gray-->
+        <scene sceneID="piL-7q-GuH">
+            <objects>
+                <viewController id="Atz-OJ-yv4" customClass="OpenCVImageController" customModule="OpenPose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PjB-FL-iYP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pose" translatesAutoresizingMaskIntoConstraints="NO" id="tzV-pq-w2L">
+                                <rect key="frame" x="67.666666666666686" y="118" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="ZoQ-Gm-Kjz"/>
+                                    <constraint firstAttribute="width" constant="240" id="yDZ-6e-Are"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGA-HO-M2T">
+                                <rect key="frame" x="141.66666666666666" y="388" width="92" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Change color"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="Atz-OJ-yv4" eventType="touchUpInside" id="bRK-uy-wFm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WGA-HO-M2T" firstAttribute="top" secondItem="tzV-pq-w2L" secondAttribute="bottom" constant="30" id="09w-2K-vdC"/>
+                            <constraint firstItem="tzV-pq-w2L" firstAttribute="top" secondItem="VGk-lB-eOK" secondAttribute="top" constant="30" id="6FL-Re-DyG"/>
+                            <constraint firstItem="tzV-pq-w2L" firstAttribute="centerX" secondItem="VGk-lB-eOK" secondAttribute="centerX" id="dnV-wl-taL"/>
+                            <constraint firstItem="WGA-HO-M2T" firstAttribute="centerX" secondItem="tzV-pq-w2L" secondAttribute="centerX" id="thd-k3-wWu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VGk-lB-eOK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image 2 Gray" id="kdI-HZ-3uf"/>
+                    <connections>
+                        <outlet property="imageView" destination="tzV-pq-w2L" id="HuD-Bs-Knk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBX-XJ-UcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="823"/>
+        </scene>
+        <!--Video 2 Gray-->
+        <scene sceneID="sZx-HP-CaX">
+            <objects>
+                <viewController id="c9Z-rY-Q3D" customClass="OpenCVVideoStreamController" customModule="OpenPose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wbS-xF-7e0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ah-tO-fhe">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HxQ-cG-mTm">
+                                <rect key="frame" x="316" y="98" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Ah-tO-fhe" firstAttribute="leading" secondItem="WVt-tP-8nL" secondAttribute="leading" id="IFL-Ls-t2y"/>
+                            <constraint firstItem="WVt-tP-8nL" firstAttribute="trailing" secondItem="HxQ-cG-mTm" secondAttribute="trailing" constant="10" id="S29-fL-Dwe"/>
+                            <constraint firstItem="2Ah-tO-fhe" firstAttribute="top" secondItem="WVt-tP-8nL" secondAttribute="top" id="WfL-Lk-U4m"/>
+                            <constraint firstItem="WVt-tP-8nL" firstAttribute="trailing" secondItem="2Ah-tO-fhe" secondAttribute="trailing" id="fcL-8h-jFs"/>
+                            <constraint firstItem="HxQ-cG-mTm" firstAttribute="top" secondItem="WVt-tP-8nL" secondAttribute="top" constant="10" id="myi-Wf-bqU"/>
+                            <constraint firstItem="WVt-tP-8nL" firstAttribute="bottom" secondItem="2Ah-tO-fhe" secondAttribute="bottom" id="ycp-oy-gKz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WVt-tP-8nL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Video 2 Gray" id="W3s-HM-uhJ"/>
+                    <connections>
+                        <outlet property="gray" destination="HxQ-cG-mTm" id="Di1-Zy-yAx"/>
+                        <outlet property="imageView" destination="2Ah-tO-fhe" id="Lq3-Wg-nYp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGj-q5-V5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="822"/>
+        </scene>
+        <!--Heat Map-->
+        <scene sceneID="Ggi-SB-m4Z">
+            <objects>
+                <viewController id="Ltf-Nl-1dp" customClass="HeatmapController" customModule="OpenPose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sHT-ls-0z8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="john_wick" translatesAutoresizingMaskIntoConstraints="NO" id="Lwv-Xs-60B">
+                                <rect key="frame" x="30" y="118" width="315" height="310"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Lwv-Xs-60B" secondAttribute="height" multiplier="61:60" id="Eq9-E9-XQd"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7T-po-6Zj">
+                                <rect key="frame" x="134.66666666666666" y="477" width="106" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Draw keypoints"/>
+                                <connections>
+                                    <action selector="drawKeypoints:" destination="Ltf-Nl-1dp" eventType="touchUpInside" id="Esv-Ny-Omk"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2s-XA-yoj" customClass="DrawingHeatmapView" customModule="OpenPose" customModuleProvider="target">
+                                <rect key="frame" x="75.666666666666686" y="532" width="224" height="224"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="GQM-fG-Fid"/>
+                                    <constraint firstAttribute="width" constant="224" id="XSs-wS-mey"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r2s-XA-yoj" firstAttribute="centerX" secondItem="Lwv-Xs-60B" secondAttribute="centerX" id="5G1-AD-Kj7"/>
+                            <constraint firstItem="i7T-po-6Zj" firstAttribute="centerX" secondItem="Lwv-Xs-60B" secondAttribute="centerX" id="N33-2y-We1"/>
+                            <constraint firstItem="i7T-po-6Zj" firstAttribute="top" secondItem="Lwv-Xs-60B" secondAttribute="bottom" constant="49" id="TXW-eP-2vg"/>
+                            <constraint firstItem="5MX-Mx-qoR" firstAttribute="trailing" secondItem="Lwv-Xs-60B" secondAttribute="trailing" constant="30" id="YBT-BF-htS"/>
+                            <constraint firstItem="Lwv-Xs-60B" firstAttribute="leading" secondItem="5MX-Mx-qoR" secondAttribute="leading" constant="30" id="hu4-Cy-HfL"/>
+                            <constraint firstItem="r2s-XA-yoj" firstAttribute="top" secondItem="i7T-po-6Zj" secondAttribute="bottom" constant="25" id="iHS-C6-jBp"/>
+                            <constraint firstItem="Lwv-Xs-60B" firstAttribute="top" secondItem="5MX-Mx-qoR" secondAttribute="top" constant="30" id="qJS-Jr-ME2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5MX-Mx-qoR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Heat Map" id="Cnt-0H-zu0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="kQ6-X4-V6u">
+                            <connections>
+                                <action selector="selectImage" destination="Ltf-Nl-1dp" id="7cG-Uf-gSw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="heatmapView" destination="r2s-XA-yoj" id="SKa-r0-sX8"/>
+                        <outlet property="imageView" destination="Lwv-Xs-60B" id="pEg-Rs-JCK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqR-LQ-2F5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="701.60000000000002" y="35.532233883058474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hZR-Hd-dod">
+            <objects>
+                <navigationController id="Zds-ih-YIX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9ML-qy-Ztg">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GZt-Oy-3TA" kind="relationship" relationship="rootViewController" id="hK6-2e-RH9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bL9-sJ-ouq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-988" y="38"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="john_wick" width="1280" height="1804"/>
+        <image name="pose" width="640" height="639"/>
+    </resources>
+</document>
