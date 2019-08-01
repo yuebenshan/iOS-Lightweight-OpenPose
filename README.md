@@ -20,6 +20,22 @@ See pytorch_to_coreml.py for more detail information.
 
 ## Examples
 
+### OpenCV Image
+
+Convert the image to gray.
+
+<table>
+  <tr>
+    <td><img src="results/color1.png" width=250/></td>
+    <td><img src="results/gray1.png" width=250/></td>
+  </tr>
+</table>
+
+### OpenCV Video Stream
+
+Use OpenCV to process the video stream.
+
+
 ### Heat Map
 
 The positions of the keypoints are shown bellow and the confidence map will be implemented in the future.
@@ -37,14 +53,17 @@ The positions of the keypoints are shown bellow and the confidence map will be i
   </tr>
 </table>
 
+### Heat Map Video Stream
+
+Real-time human keypoint estimation.
 
 ## TODO
 
-1. Change the aspect ration of the output.
+~~1. Change the aspect ratio of the output.~~
 
-2. Group the keypoints with PAF.
+~~2. Video streaming.~~
 
-3. Video streaming.
+3. Group the keypoints with PAF.
 
 ## Reference
 

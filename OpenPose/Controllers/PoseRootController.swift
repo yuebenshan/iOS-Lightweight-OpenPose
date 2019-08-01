@@ -40,6 +40,11 @@ class PoseRootController: UITableViewController {
         let heatMap = ExampleDescription(name: "Heat map",
                                          description: "show the probability of the keypoints")
         descriptions.append(heatMap)
+        
+        // 4. openpose heatmap with video
+        let heatMapVideo = ExampleDescription(name: "Heat map video",
+                                         description: "show the probability of the keypoints on video")
+        descriptions.append(heatMapVideo)
     }
 
     // MARK: - Table view data source
@@ -73,6 +78,8 @@ class PoseRootController: UITableViewController {
             performSegue(withIdentifier: "opencvVideoStream", sender: self)
         case "Heat map":
             performSegue(withIdentifier: "heatMap", sender: self)
+        case "Heat map video":
+            performSegue(withIdentifier: "heatMapVideo", sender: self)
         default:
             break
         }

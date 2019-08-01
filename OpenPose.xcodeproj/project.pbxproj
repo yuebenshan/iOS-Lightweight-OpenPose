@@ -24,6 +24,7 @@
 		B5A146D822E6A98B00BDF34E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B5A146D722E6A98B00BDF34E /* README.md */; };
 		B5A146DA22E6A99200BDF34E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B5A146D922E6A99200BDF34E /* LICENSE */; };
 		B5A146E222E6E04200BDF34E /* pose_368.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B5A146E122E6E04200BDF34E /* pose_368.mlmodel */; };
+		B5A5D55522EE9634008B40A4 /* HeatmapVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5D55422EE9634008B40A4 /* HeatmapVideoController.swift */; };
 		B5C67BBE22E54FC300341542 /* HeatmapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C67BBD22E54FC300341542 /* HeatmapController.swift */; };
 		B5C67BC222E585D600341542 /* DrawingHeatmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C67BC122E585D600341542 /* DrawingHeatmapView.swift */; };
 		B5C67BC822E5C56B00341542 /* john_wick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5C67BC722E5C56B00341542 /* john_wick.jpg */; };
@@ -55,6 +56,7 @@
 		B5A146D722E6A98B00BDF34E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5A146D922E6A99200BDF34E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B5A146E122E6E04200BDF34E /* pose_368.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = pose_368.mlmodel; sourceTree = "<group>"; };
+		B5A5D55422EE9634008B40A4 /* HeatmapVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapVideoController.swift; sourceTree = "<group>"; };
 		B5C67BBD22E54FC300341542 /* HeatmapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapController.swift; sourceTree = "<group>"; };
 		B5C67BC122E585D600341542 /* DrawingHeatmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingHeatmapView.swift; sourceTree = "<group>"; };
 		B5C67BC722E5C56B00341542 /* john_wick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = john_wick.jpg; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				B5C67BBD22E54FC300341542 /* HeatmapController.swift */,
 				B529C48122E7E8FD00E54D7E /* OpenCVImageController.swift */,
 				B529C48C22E82A0900E54D7E /* OpenCVVideoStreamController.swift */,
+				B5A5D55422EE9634008B40A4 /* HeatmapVideoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				B53E38BC22E01A00004229E0 /* InferenceError.swift in Sources */,
 				B529C48B22E828DA00E54D7E /* DeviceInput.swift in Sources */,
 				B529C48D22E82A0900E54D7E /* OpenCVVideoStreamController.swift in Sources */,
+				B5A5D55522EE9634008B40A4 /* HeatmapVideoController.swift in Sources */,
 				B5C67BC222E585D600341542 /* DrawingHeatmapView.swift in Sources */,
 				B5A146E222E6E04200BDF34E /* pose_368.mlmodel in Sources */,
 				B529C48222E7E8FD00E54D7E /* OpenCVImageController.swift in Sources */,

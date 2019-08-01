@@ -14,7 +14,6 @@ class HeatmapController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     var imagePicker = UIImagePickerController()
-    @IBOutlet weak var heatmapView: DrawingHeatmapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,38 +62,18 @@ class HeatmapController: UIViewController {
             // process the heatnap
             // output.heat_map_2 => (1,1,n, w, h)
             //
-            let keypoint_number = output.heat_map_2.shape[2].intValue
-            let heatmap_w = output.heat_map_2.shape[3].intValue
-            let heatmap_h = output.heat_map_2.shape[4].intValue
+            let keypoint_number = output.heat_map_2.shape[2].int32Value
+            let heatmap_w = output.heat_map_2.shape[3].int32Value
+            let heatmap_h = output.heat_map_2.shape[4].int32Value
             
-            var convertedHeatMap: Array<Array<Float32>> =
-                Array(repeating: Array(repeating: 0.0, count: heatmap_h), count: heatmap_w)
+            var tensorShape:[Int32] = [heatmap_w, heatmap_h, keypoint_number]
+            let convertedHeatMap = OpenCVWrapper.visualizeHeatmap(
+                                                    output.heat_map_2,
+                                                    heatmapShape: &tensorShape,
+                                                    inputImage: self.imageView.image)
             
-            for k in 0..<(keypoint_number-4) {
-                for i in 0..<heatmap_w {
-                    for j in 0..<heatmap_h {
-                        let index = k*(heatmap_w*heatmap_h) + i*(heatmap_h) + j
-                        let confidence = output.heat_map_2[index].floatValue
-                        convertedHeatMap[j][i] += confidence
-                    }
-                }
-            }
-            
-            convertedHeatMap = convertedHeatMap.map { row in
-                return row.map { element in
-                    if element > 0.4 {
-                        return 1.0
-                    } else if element < 0 {
-                        return 0.0
-                    } else {
-                        return 0.0
-                    }
-                }
-            }
-            
-            // show image
             DispatchQueue.main.sync {
-                self.heatmapView.heatmap2D = convertedHeatMap
+                self.imageView.image = convertedHeatMap
             }
         }
     } // process
